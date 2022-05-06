@@ -1,0 +1,1111 @@
+@charset "UTF-8";
+
+/* webfont */
+@font-face {
+    font-family: GodoM;
+    src: url(../webfont/GodoM.eot);
+    src: url(../webfont/GodoM.woff)
+}
+
+@font-face {
+    font-family: JejuMyeongjo;
+    src: url(../webfont/JejuMyeongjoOTF.eot);
+    src: url(../webfont/JejuMyeongjoOTF.woff)
+}
+
+@font-face {
+    font-family: RobotoR;
+    src: url(../webfont/Roboto-Regular.eot);
+    src: url(../webfont/Roboto-Regular.woff)
+}
+.hidden {
+    display: none;
+}
+.pc-Sign_in{display: none;}
+
+/* --------------HEADER -------------- */
+header {
+    width: 100%;
+    height: 70px;
+    /* background-color: antiquewhite; */
+}
+
+header h1 {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    /* background-color: yellowgreen; */
+}
+
+header h1 img {
+    width: 200px;
+}
+
+/* MOBILE NAV */
+#gnb-pc {
+    display: none;
+}
+
+/* menu-toggle-btn */
+.menu-toggle-btn {
+    width: 90px;
+    height: 70px;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+
+/* toggle btn js */
+.menu-toggle-btn.active {
+    left: 250px;
+}
+
+.menu-toggle-btn>div {
+    width: 33px;
+    height: 3px;
+    border-radius: 2px;
+    background: #000000;
+    margin: 5px 28px;
+}
+
+.menu-toggle-btn>div.active {
+    background: #fff;
+    color: #fff;
+}
+
+/* 햄버거 버튼 x모양으로 변경 */
+.menu-toggle-btn.active #one {
+    transform: translateY(7px) rotate(-135deg);
+    transition: all 0.6s ease-in-out;
+}
+
+.menu-toggle-btn.active #two {
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+}
+
+.menu-toggle-btn.active #three {
+    transform: translateY(-9px) rotate(-45deg);
+    transition: all 0.6s ease-in-out;
+}
+
+.search_box-pc {
+    display: none;
+}
+
+.sign-in {
+    margin-top: 50px;
+    padding: 15px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.search_box-mo {
+    width: 200px;
+    height: 35px;
+    position: relative;
+    background: #838383;
+    border: 1px solid #b1b1b1;
+    border-radius: 10px;
+    left: 55px;
+    margin-bottom: 40px;
+}
+
+.search_box-mo .search {
+    position: absolute;
+    width: 20%;
+}
+
+.search_box-mo .material-icons {
+    color: #fff;
+    font-size: 30px;
+}
+
+.search_box-mo input {
+    position: absolute;
+    width: 80%;
+    right: 0;
+    top: 10px;
+    background: none;
+}
+
+/* GNB-MO */
+#gnb-mo {
+    position: fixed;
+    width: 320px;
+    height: 100%;
+    top: 0;
+    left: -320px;
+    background: #333;
+    z-index: 100;
+    transition: all 0.6s ease-in-out;
+    font-family: GodoM;
+    line-height: 1.5;
+}
+
+/* gnb mo js */
+#gnb-mo.show {
+    left: 0;
+
+}
+
+#gnb-mo .mainMenu .item {
+    border-top: 1px solid #868686;
+    overflow: hidden;
+}
+
+#gnb-mo .mainMenu .item a.btn {
+    display: block;
+    padding: 15px 20px;
+    background: #333;
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+}
+
+#gnb-mo .mainMenu .subMenu {
+    background: #333;
+    transition: max-height 0.7s;
+    max-height: 0;
+}
+
+#gnb-mo .mainMenu .item:target .subMenu {
+    max-height: 260px;
+    /*높이변경지점*/
+}
+
+#gnb-mo .mainMenu .subMenu a {
+    display: block;
+    padding: 15px 40px;
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    position: relative;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+#gnb-mo .mainMenu .subMenu a:hover {
+    background: #1a1a1a;
+}
+
+/* ---------------------------------------- */
+/* MAIN SLIDER */
+.main-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-slider img {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* 이전 다음버튼 */
+.main-slider .button-prev,
+.main-slider .button-next {
+    width: 42px;
+    height: 42px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-slider .button-prev {
+    left: 0;
+}
+
+.main-slider .button-next {
+    right: 0;
+}
+
+.main-slider .button-prev .material-icons,
+.main-slider .button-next .material-icons {
+    color: #fff;
+}
+
+/* MOBILE BEST ITEM */
+.best-item {
+    width: 100%;
+}
+
+.best-item .best-item__inner {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.best-item h2 {
+    margin: 60px 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    font-family: JejuMyeongjo;
+
+}
+
+.best-item .best-item__inner .swiper {
+    width: 70%;
+    margin: auto;
+}
+
+/* 이전 다음버튼 */
+.best-item .button-prev,
+.best-item .button-next {
+    width: 42px;
+    height: 42px;
+    outline: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.best-item .button-next {
+    right: 0;
+}
+
+.best-item .button-prev .material-icons,
+.best-item .button-next .material-icons {
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+}
+
+.best-item .best-item__inner .swiper img {
+    width: 100%;
+}
+
+/* 배경 fixed area */
+#fixed {
+    width: 100%;
+    height: 220px;
+    background: url(../images/fixed_img.jpg) no-repeat center -90px fixed;
+    background-size: cover contain;
+}
+
+/* content area */
+#content {
+    width: 90%;
+    height: 2200px;
+    margin: auto;
+    position: relative;
+}
+
+
+#content .perfume {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50px;
+}
+
+#content .perfume img {
+    margin: auto;
+}
+
+#content .perfume_box {
+    width: 100%;
+    position: absolute;
+    top: 530px;
+    text-align: center;
+}
+
+
+#content .handwash {
+    width: 100%;
+    height: 405px;
+    position: absolute;
+    top: 800px;
+    overflow: hidden;
+}
+
+#content .handwash img {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+#content .handwash_box {
+    width: 100%;
+    position: absolute;
+    top: 1220px;
+    text-align: center;
+}
+
+#content .handcream {
+    position: absolute;
+    top: 1490px;
+    width: 100%;
+    height:auto;
+    overflow: hidden;
+}
+
+#content .handcream img {
+    margin: auto;
+    width: 100%;
+}
+
+#content .handcream_box {
+    width: 100%;
+    position: absolute;
+    top: 1830px;
+    text-align: center;
+}
+
+
+#content a.perfume img {
+    transition: all 0.3s ease-in-out;
+}
+
+#content a.handcream img {
+    transition: all 0.7s ease-in-out;
+}
+
+#content a.handwash img {
+    transition: all 0.7s ease-in-out;
+}
+
+#content div h3 {
+    font-family: JejuMyeongjo;
+    font-size: 2.938em;
+    padding-bottom: 22px;
+}
+
+#content div p {
+    font-family: JejuMyeongjo;
+    font-size: 1.063em;
+    color: #8f8f8f;
+    line-height: 1.2;
+    padding-bottom: 29px;
+}
+
+#content div a.btn {
+    font-family: JejuMyeongjo;
+    font-size: 1.063em;
+    color: #000;
+    border: 1px solid #333;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px #333;
+}
+
+#content div a:hover {
+    color: #8E8E8E;
+    text-decoration: underline;
+}
+
+
+/* image hover 효과*/
+.perfume:hover {
+    filter: grayscale(100%);
+}
+
+.handcream:hover img,
+.handwash:hover img {
+    transform: scale(1.1);
+    transition: all 0.2s linear;
+}
+
+/* ----------------------------- */
+
+/* Our Stories area */
+#OurStories {
+    width: 100%;
+    background: url(../images/sns_bg.png) no-repeat center top;
+    position: relative;
+}
+
+#OurStories h2 {
+    text-align: center;
+    padding: 25px;
+    font-family: JejuMyeongjo;
+    font-weight: bold;
+}
+
+#OurStories .sns-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#OurStories div a {
+    width: 90%;
+    height: 300px;
+    padding: 10px 0;
+}
+
+#OurStories div img {
+    width: 100%;
+    height: 100%;
+}
+
+/* brandstory area */
+#brandstory {
+    width: 100%;
+    height: auto;
+    background: #0B0B0B;
+}
+
+#brandstory .brandstory__inner {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+#brandstory img {
+    width: 150px;
+    margin-left: 50px;
+}
+
+#brandstory .brandstory__inner .front {
+    position: absolute;
+    top: 60px;
+    left: 210px;
+    color: rgb(235, 235, 235);
+    font-family: JejuMyeongjo;
+}
+
+#brandstory .brandstory__inner h2 {
+    position: absolute;
+    top: 75px;
+    left: 230px;
+    color: rgb(204, 202, 202);
+    font-family: JejuMyeongjo;
+
+}
+
+#brandstory .brandstory__inner div span:nth-child(3) {
+    position: absolute;
+    top: 100px;
+    left: 250px;
+    color: rgb(204, 202, 202);
+    font-family: jejuMyeongjo;
+
+}
+
+#brandstory .brandstory__inner div .back {
+    width: 30px;
+    position: absolute;
+    top: 90px;
+    left: 490px;
+    color: rgb(235, 235, 235);
+    font-family: JejuMyeongjo;
+}
+
+#brandstory .brandstory__inner div p {
+    position: absolute;
+    bottom: 40px;
+    left: 250px;
+    color: rgb(204, 202, 202);
+}
+
+
+/* footer area */
+footer {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #5A5A5A;
+    position: relative;
+}
+
+.footer__inner {
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.footer__inner .f-nav {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer__inner .f-nav ul {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.footer__inner .f-nav ul li a {
+    text-align: center;
+    font-family: RobotoR;
+    color: #8E8E8E;
+    font-size: 0.875em;
+}
+
+.footer__inner .f-nav ul li:first-child a {
+    color: #fff;
+}
+
+.footer__inner .f-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer__inner h4 {
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.footer__inner h4 img {
+    width: 100%;
+}
+
+footer hr {
+    width: 100%;
+    height: 1px;
+    background-color: #2c2c2c;
+    position: absolute;
+    top: 21%;
+    z-index: 5;
+}
+
+.footer__inner address {
+    padding-top: 10px;
+    color: #8E8E8E;
+    font-size: 0.875em;
+    font-family: RobotoR;
+    line-height: 1.3;
+    text-align: center;
+    bottom: 15px;
+}
+
+/* ------------------------TAB------------------ */
+@media all and (min-width:768px) {
+    
+    .best-item .best-item__inner {
+        width:85%;
+        margin-bottom: 150px;
+    }
+
+    .best-item .best-item__inner .swiper {
+        width: 95%;
+    }
+
+    #fixed {
+        width: 100%;
+        height: 230px;
+        background: url(../images/fixed_img.jpg) no-repeat center -90px fixed;
+        background-size: contain;
+    }
+
+    #content {
+        height: 1700px;
+    }
+
+    .perfume_main {
+        width: 40%;
+        position: absolute;
+        top: 0;
+        left: 5%;
+    }
+
+    .handwash_main {
+        width: 40%;
+        position: absolute;
+        right: 2%;
+        top: -750px;
+    }
+
+    #content .handwash {
+        width: 360px;
+        height: 458px;
+        position: absolute;
+        top: 800px;
+        left: -50px;
+        overflow: hidden;
+    }
+
+    #content .handwash img {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+    #content .handwash_box {
+        width: 100%;
+        position: absolute;
+        left: -20%;
+        top: 1300px;
+        text-align: center;
+    }
+
+    #content .handcream {
+        position: absolute;
+        top: 830px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 90%;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    #content .handcream img {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+    #content .handcream_box {
+        width: 100%;
+        position: absolute;
+        top: 1380px;
+        text-align: center;
+    }
+
+
+    #OurStories h2 {
+        font-size: 22px;
+    }
+
+
+    .footer__inner h4{
+        width: 30%;
+        margin-top: 10px;
+    }
+    #brandstory img {
+        width: 25%;
+    }
+    
+    #brandstory .brandstory__inner .front {
+        left:35%;
+        font-size:1.838em;
+    }
+    #brandstory .brandstory__inner h2 {
+        top:95px;
+        left:38%;
+        font-size: 1.500em;
+    }
+    
+    #brandstory .brandstory__inner div span:nth-child(3) {
+        top:150px;
+        left:42%;
+        font-size:1.838em;
+    }
+    
+    #brandstory .brandstory__inner div .back {
+        top: 140px;
+        left:800px;
+        font-size:1.838em;
+    }
+    
+    #brandstory .brandstory__inner div p {
+        bottom: 40px;
+        left:50%;
+        font-size: 1.500em;
+    }
+}
+
+/* ------------------------PC------------------ */
+
+@media all and (min-width:1200px) {
+.menu-toggle-btn {
+        display: none;
+    }
+    .search_box-pc{
+        display: block;
+        position:absolute;
+        right: 0;
+        display: flex;
+        top: 10px;
+        border: 1px solid rgb(90, 90, 90);
+        border-radius: 10px;
+        height: 35px;
+        
+    }
+    .search_box-pc .material-icons{
+        width: 20%;
+        color: #747474;
+        font-size: 35px;
+    }
+    .search_box-pc input{
+        width: 80%;
+        height: 30px;
+        border-radius: 10px;
+    }
+    header .inner > span{
+        position: absolute;
+        color: #333;
+        right:250px;
+        top: 15px;
+    }
+    #gnb-pc {
+        display: block;
+    }
+    .pc-Sign_in{display:block;}
+    header {
+        position:relative;
+        top: 0;
+        z-index: 10;
+        height: 110px;
+        background-color: #fff;
+    }
+    header .inner {
+        width: 1200px;
+        height: 100px;
+        margin: auto;
+        position: relative;
+    }
+    header h1 {
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left:50px;
+        margin: auto;
+        width: 100px;
+        height: 30px;
+    }
+    #gnb-pc .main-menu {
+        display: flex;
+        position: absolute;
+        top: 70px;
+        right: 0;
+    }
+    #gnb-pc .main-menu a {
+        text-decoration: none;
+        padding:0 0 0 60px;
+        display: block;
+        text-align: center;
+    }
+    #gnb-pc .main-menu li.item:hover .item__name>a {
+        text-decoration: underline;
+        color: #333;
+    }
+    #gnb-pc .main-menu li.item .item__contents {
+        position:fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: 280px;
+        background: rgba(255, 255, 255, 0.5);
+        transition: opacity 0.4s;
+        display: none;
+    }
+    #gnb-pc .main-menu .item:hover .item__contents {
+        display: block;
+    }
+    #gnb-pc .main-menu .item__contents .contents__menu {
+        width: 1200px;
+        height: 150px;
+        margin: auto;
+        position: relative;
+    }
+    #gnb-pc .main-menu .item__contents img{
+        position: absolute;
+        left: 300px;
+        top:50px;
+    }
+    #gnb-pc .main-menu .item__contents .contents__menu .menu__inner {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        display: flex;
+        padding-top: 5px;
+    }
+    #gnb-pc .main-menu .item__contents .menu__inner a {
+        color: #fff;
+        padding-left: 150px;
+        text-align: left;
+    }
+    #gnb-pc .main-menu .item__contents .menu__inner ul li a{font-size: 13px; color: #111; font-weight: bold;}
+    #gnb-pc .main-menu .item__contents .contents__menu .menu__inner li {
+        padding-top: 20px;
+    }
+
+/*main-slider  */
+    .main-slider {
+        width: 100%;
+        height: auto;
+
+    }
+    .main-slider img{height: 100%;}
+    .main-slider .button-prev,
+    .main-slider .button-next {
+        width: 80px;
+        height: 80px;
+    }
+    .main-slider .button-prev .material-icons,
+    .main-slider .button-next .material-icons{
+        font-size: 40px;
+    }
+
+    /* best-item */
+    .best-item{
+        width: 1200px;
+        margin: auto;
+    }
+    .best-item h2{
+        font-size: 39px;
+    }
+
+    #content{
+        width: 1200px;
+        min-width: 1200px;
+        height: 1270px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    
+    #content .perfume{
+        width: 370px;
+        height: 459px;
+        position: absolute;
+        top: 420px;
+        left: 50px;
+    }
+    
+    
+    
+    #content .handcream{
+        width:430px;
+        height: 300px;
+        position: absolute;
+        top: 103px; 
+        right:-500px;
+        overflow: hidden;
+    }
+    #content .handwash{
+        width: 450px;
+        height: 405px;
+        position: absolute;
+        top: 1550px;
+        right: 50px;
+        overflow: hidden;
+        text-align: left;
+    }
+    #content .handwash_box{
+        position: absolute;
+        top:1750px;
+        left:-600px;
+        text-align: right;
+    }
+    
+    #content .perfume_box{
+        position: absolute;
+        top: 150px;
+        left:10px;
+        text-align: left;
+    }
+    #content .handcream_box{
+        position: absolute;
+        top: 450px;
+        right:0px;
+        text-align:right;
+    }
+    #content div a.btn {
+        font-family: JejuMyeongjo;
+        font-size: 1.063em;
+        color: #000;
+        border:none;
+        margin: auto;
+        box-shadow:none;
+    }
+    #content .handwash_main .handwash_box .btn_3{
+        position:absolute;
+        right: 0 !important
+    }
+    #content .perfume::after{
+        content: "";
+        width: 2px;
+        height: 350px;
+        background-color: #b1b1b1;
+        position: absolute;
+        left: 500px;
+        top: -340px;
+    } 
+    #content::before{
+        content: "";
+        width: 580px;
+        height: 2px;
+        background-color: #b1b1b1;
+        position: absolute;
+        top: 700px;
+        left: 620px;
+    }
+    #content::after{
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #b1b1b1;
+        position: absolute;
+        top: 930px;
+        right: 580px;
+    }
+    #content .handcream_box {
+        width: 50%;
+        position: absolute;
+        top: 500px;
+        text-align:right;
+    }
+    #OurStories {
+        width: 100%;
+        background: url(../images/sns_bg.png) no-repeat center top;
+        position: relative;
+    }
+    /* 배경 fixed area */
+#fixed {
+    width: 100%;
+    height: 350px;
+    background: url(../images/fixed_img.jpg) no-repeat center -90px fixed;
+    background-size:cover;
+}
+/* brandstory area */
+#brandstory{
+    width: 100%;
+    height: 370px;
+    background: #0B0B0B;
+}
+#brandstory .brandstory__inner{
+    width: 1200px;
+    height: 370px;
+    margin: 0 auto;
+    position: relative;
+}
+#brandstory img{
+    width: 250px;
+    height: 370px;
+    margin-left: 100px;
+}
+#brandstory .brandstory__inner .front{
+    width: 55px;
+    position: absolute;
+    top: 40px;
+    left: 380px;
+    color: rgb(235, 235, 235);
+    font-family: JejuMyeongjo;
+    font-size: 3.125em;
+}
+#brandstory .brandstory__inner h2{
+    width: 500px;
+    position: absolute;
+    top: 50px;
+    left: 410px;
+    color: rgb(204, 202, 202);
+    font-family: JejuMyeongjo;
+    font-size: 2.500em;
+   
+}
+#brandstory .brandstory__inner div span:nth-child(3){
+    width: 360px;
+    position: absolute;
+    top: 130px;
+    left: 670px;
+    color: rgb(204, 202, 202);
+    font-family: jejuMyeongjo;
+    font-size: 1.438em;
+    
+}
+#brandstory .brandstory__inner div .back{
+    width: 50px;
+    position: absolute;
+    top: 110px;
+    left: 990px;
+    color: rgb(235, 235, 235);
+    font-family: JejuMyeongjo;
+    font-size: 1.438em;
+}
+#brandstory .brandstory__inner div p{
+    width: 500px;
+    position: absolute;
+    bottom: 100px;
+    left: 450px;
+    color: rgb(204, 202, 202);
+    font-family: JejuMyeongjo;
+    font-size: 1.875em;
+}
+
+
+/* footer area */
+footer{
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #5A5A5A;
+}
+.footer__inner{
+    width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+}
+.footer__inner .f-nav{
+    width: 100%;
+    margin: 0 auto;
+}
+.footer__inner .f-nav ul{
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+.footer__inner .f-nav ul li a{
+    text-align: center;
+    font-family: RobotoR;
+    color: #8E8E8E;
+}
+.footer__inner .f-nav ul li:first-child a{
+    color: #fff;
+}
+.footer__inner .f-nav ul li a:hover{
+    text-decoration: underline;
+}
+.footer__inner h4{
+    width: 253px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.footer__inner hr{
+    width: 150px;
+    height: 1px;
+    background-color: #838383;
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    margin-left: -75px;
+    z-index: 5;
+}
+.footer__inner address{
+    padding-top: 30px;
+    color: #8E8E8E;
+    font-size: 0.875em;
+    font-family: RobotoR;
+    line-height: 1.3;
+    text-align: center;
+}
+
+}
